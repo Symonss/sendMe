@@ -1,0 +1,149 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>SendMe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+<body class="w3-padding-large">
+
+
+  <div class="w3-bar w3-large w3-teal w3-left-align">
+    <a class="w3-hide-medium w3-hide-large w3-bar-item w3-button w3-teal w3-opennav w3-right" href="javascript:void(0);" onclick="myFunction()">☰</a>
+    <a class="w3-bar-item w3-button w3-hide-small " href="#">Welcome to SendMe!</a>
+    <a class="w3-bar-item w3-button  w3-hide-small w3-right" href="#">Link 1</a>
+    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">Link 2</a>
+    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">Last</a>
+  </div>
+
+  <div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
+    <div class="w3-bar-block w3-left-align w3-large w3-teal">
+      <a class=" w3-bar-item w3-button"href="#">Link 1</a>
+      <a class=" w3-bar-item w3-button"href="#">Link 1</a>
+      <a class=" w3-bar-item w3-button"href="#">last</a>
+    </div>
+  </div>
+
+
+  <p class="w3-padding-large">
+    If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>.
+    If you are new to SendMe, get started by creating a <a href="{% url 'employer_signup' %}">Employer</a> or a <a href="{% url 'employee_signup' %}">Employee account</a>.
+    or a <a href="{% url 'regional_admin_signup' %}">Regional Admin</a>or a <a href="{% url 'admin_signup' %}">Senior Admin</a>
+  </p>
+  <hr>
+  <h3 class="w3-center">What's this ?</h3>
+  <hr class="w3-border-red" style="margin:auto;width:40%">
+  <p>
+    SendMe is a revolutionary source of income and way to connect those who want work and those who want theirv tasks Done
+    by professionals.Currently we are in developement mode and this version is out only for beta test. We'll be glad to
+    get your views and feedback.
+  </p>
+
+  <h3 class="w3-center">Available jobs</h3>
+  <hr class="w3-border-red" style="margin:auto;width:40%">
+
+  <div class="w3-row-padding w3-margin-top">
+  </div>
+  <div class="w3-row-padding w3-margin-top">
+
+  <div class="w3-third">
+    <div class="w3-card-4">
+    <div class="w3-container">
+      <p>Wall Mounting</p>
+      <hr>
+      <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle">
+      <p style="font-size:12px">My 32" samsung should be  hhh hhh ttmounted on a wall hard concrete by tuesday...</p>
+    </div>
+    <button style="font-size:10px" class="w3-btn-block w3-teal">Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
+    <button style="font-size:10px" class="w3-btn-block w3-dark-grey">Bids:7/16</button>
+    <button style="font-size:10px" class="w3-btn-block w3-dark-grey">Bid now</button>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card-4">
+    <div class="w3-container">
+      <p>Wall Mounting</p>
+      <hr>
+      <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle">
+      <p style="font-size:12px">My 32" samsung hhh hhjh hh should be mounted on a wall hard concrete by tuesday...</p>
+    </div>
+    <button style="font-size:10px" class="w3-btn-block w3-teal">Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
+    <button style="font-size:10px" class="w3-btn-block w3-dark-grey">Bids:7/16</button>
+    <button style="font-size:10px" class="w3-btn-block w3-dark-grey">Bid now</button>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card-4">
+    <div class="w3-container">
+      <p style="margin-bottom:-4%">Honey Sacking</p>
+      <p  style="font-size:10px" class="w3-btn-block"><i><b>Range:Ksh.56.00-Ksh.70.00 |
+      By:Symons | Kisumu</b></i></p>
+      <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle">
+      <p style="font-size:12px">My fucking toilet sucks. someone cum suck it please! I'll, pay handsomeley </p>
+    </div>
+
+    <button style="font-size:10px" class="w3-btn-block w3-teal">Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
+    <button style="font-size:10px" class="w3-btn-block w3-dark-grey">Bids:7/16</button>
+    <button style="font-size:10px" class="w3-btn-block w3-dark-grey">Bid now</button>
+    </div>
+  </div>
+  </div>
+
+
+  <h3 class="w3-center">Our Developers</h3>
+  <hr class="w3-border-red" style="margin:auto;width:40%">
+
+<div class="w3-row-padding w3-margin-top">
+</div>
+<div class="w3-row-padding w3-margin-top">
+
+<div class="w3-third">
+<div class="w3-card-2">
+<img src="{% static 'images/symons.jpg' %}" style="width:100%">
+<div class="w3-container">
+<h5>Symons</h5>
+<i>Senior Developer</i>
+</div>
+</div>
+</div>
+
+
+<div class="w3-third">
+<div class="w3-card-2">
+<img src="{% static 'images/symons.jpg'%}" style="width:100%">
+<div class="w3-container">
+  <h5>Symons</h5>
+  <i>Senior Developer</i>
+</div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card-2">
+<img src="{% static 'images/symons.jpg'%}" style="width:100%">
+<div class="w3-container">
+  <h5>Symons</h5>
+  <i>Senior Developer</i>
+</div>
+</div>
+</div>
+
+</div>
+<br >
+
+<!-- footer begins here -->
+<footer class="w3-container w3-center w3-teal">
+  <h5>SendMe limited </h5>
+  <p>Powered by SendMe group of developers</p>
+  <i> &copy sendMe|2018-2019</i>
+
+</footer>
+
+
+<script>
+function myFunction() {
+    document.getElementById("demo").classList.toggle("w3-show");
+}
+</script>

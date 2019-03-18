@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Sign up for a free account</h2>
+  <p class="lead">Select below the type of account you want to create <span style="color:blue">NB:<i>This is for beta testing only</i></span></p>
+  <a href="{% url 'regional_admin_signup' %}" class="btn btn-student btn-lg" role="button">I'm a Regional Admin | </a>
+  <a href="{% url 'employer_signup' %}" class="btn btn-student btn-lg" role="button">I'm an Employer | </a>
+  <a href="{% url 'employee_signup' %}" class="btn btn-teacher btn-lg" role="button">I'm an Employee | </a>
+  <a href="{% url 'admin_signup' %}" class="btn btn-teacher btn-lg" role="button">I'm an Admin</a>
+{% endblock %}
