@@ -5,16 +5,17 @@
 <title>SendMe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'css/w3.css' %}">
-<body class="w3-padding-large">
+<body >
+</div><!--closed before footer -->
 
-
-  <div class="w3-bar w3-large w3-teal w3-left-align">
+  <div class="w3-bar w3-large w3-teal w3-card-2 w3-left-align">
     <a class="w3-hide-medium w3-hide-large w3-bar-item w3-button w3-teal
     w3-opennav w3-right" href="javascript:void(0);" onclick="myFunction()">☰</a>
-    <a class="w3-bar-item w3-button w3-hide-small " href="#"><img src="{% static 'images/general/logo.ppg'%}" alt=""></a>
-    <a class="w3-bar-item w3-button  w3-hide-small w3-right" href="#">Link 1</a>
-    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">Link 2</a>
-    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">Last</a>
+    <a class="w3-bar-item w3-buttn w3-hide-small " href="#">
+      <img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></a>
+    <a class="w3-bar-item w3-button  w3-hide-small w3-right" href="{% url 'login' %}">Login|Signup</a>
+    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">How to</a>
+    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">Jobs</a>
   </div>
 
   <div id="demo" class="w3-hide w3-hide-large w3-hide-medium">
@@ -25,7 +26,7 @@
     </div>
   </div>
 
-
+<div class="body_in w3-padding-large ">
   <p class="w3-padding-large">
     If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>.
     If you are new to SendMe, get started by creating a
@@ -111,40 +112,60 @@
 </div>
 <div class="w3-row-padding w3-margin-top">
 
-<div class="w3-third">
-<div class="w3-card-2">
-<img src="{% static 'images/bg-title-01.jpg' %}" style="width:100%">
-<div class="w3-container">
-<h5>Symons</h5>
-<i>Senior Developer</i>
-</div>
-</div>
-</div>
-
-
-<div class="w3-third">
-<div class="w3-card-2">
-<img src="{% static 'images/symons.jpg'%}" style="width:100%">
-<div class="w3-container">
-  <h5>Symons</h5>
-  <i>Senior Developer</i>
-</div>
-</div>
-</div>
+  <div class="w3-third">
+  <div class=" w3-display-container w3-card-4" style="height:200px" >
+  <img class="w3-opacity-min"src="{% static 'images/symons.jpg'%}" style="width:100%;height:200px">
+  <div class="w3-display-bottomleft w3-text-teal">
+    <div class="w3-panel w3-leftbar ">
+      <h4 class="w3-large w3-serif "><b><i>" Our imagination is our only limit,we can <!DOCTYPE html>
+      just anything and everything"</i></b></h4>
+      <b class="w3-text-white">Symons</b>
+    </div>
+  </div>
+  <div class="w3-container">
+    <h5>C.E.O and Co-founder</h5>
+    <hr class="w3-border-red" style="margin:auto;width:40%">
+  </div>
+  </div>
+  </div>
 
 <div class="w3-third">
-<div class="w3-card-2">
-<img src="{% static 'images/symons.jpg'%}" style="width:100%">
+<div class=" w3-display-container w3-card-4" style="height:200px" >
+<img class="w3-opacity-min"src="{% static 'images/symons.jpg'%}" style="width:100%;height:200px">
+<div class="w3-display-bottomleft w3-text-teal">
+  <div class="w3-panel w3-leftbar ">
+    <h4 class="w3-large w3-serif "><b><i>" Our imagination is our only limit,we can <!DOCTYPE html>
+    just anything and everything"</i></b></h4>
+    <b class="w3-text-white">Symons</b>
+  </div>
+</div>
 <div class="w3-container">
-  <h5>Symons</h5>
-  <i>Senior Developer</i>
+  <h5>C.E.O and Co-founder</h5>
+  <hr class="w3-border-red" style="margin:auto;width:40%">
 </div>
 </div>
 </div>
 
+<div class="w3-third">
+<div class=" w3-display-container w3-card-4" style="height:200px" >
+<img class="w3-opacity-min"src="{% static 'images/symons.jpg'%}" style="width:100%;height:200px">
+<div class="w3-display-bottomleft w3-text-teal">
+  <div class="w3-panel w3-leftbar ">
+    <h4 class="w3-large w3-serif "><b><i>" Our imagination is our only limit,we can <!DOCTYPE html>
+    just anything and everything"</i></b></h4>
+    <b class="w3-text-white">Symons</b>
+  </div>
+</div>
+<div class="w3-container">
+  <h5>C.E.O and Co-founder</h5>
+  <hr class="w3-border-red" style="margin:auto;width:40%">
+</div>
+</div>
+</div>
+<br>
 </div>
 <br >
-
+</div>
 <!-- footer begins here -->
 <footer class="w3-container w3-center w3-teal">
   <h5>SendMe limited </h5>
