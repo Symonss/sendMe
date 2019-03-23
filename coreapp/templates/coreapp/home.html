@@ -14,7 +14,7 @@
 </style>
 <body class="w3-text-grey">
 
-  <div class="w3-bar w3-top w3-large w3-pale-yellow w3-card-2 w3-left-align">
+  <div class="w3-bar w3-top w3-large w3-pale-blue w3-card-2 w3-left-align">
     <a class="w3-hide-medium w3-hide-large w3-bar-item w3-button
     w3-opennav w3-right" href="javascript:void(0);" onclick="myFunction()">☰</a>
     <a class="w3-bar-item w3-buttn  " href="#">
@@ -25,7 +25,7 @@
   </div>
 
   <div id="demo" class="w3-hide w3-hide-large  w3-hide-medium">
-    <div class="w3-bar-block  w3-left-align w3-large w3-pale-yellow">
+    <div class="w3-bar-block  w3-left-align w3-large w3-pale-blue">
       <a class="w3-bar-item w3-buttn  " href="#">
         <img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></a>
       <a class=" w3-bar-item w3-button"href="#">Jobs</a>
@@ -40,13 +40,13 @@
     <img class="mySlides" src="{% static 'images/Owl-Book-128.png'%}" style="width:100%;height:300px">
   </div>
 
-  <div class="w3-panel w3-pale-blue w3-card w3-round-xxlarge">
+  <div class="w3-panel w3-text-light-green w3-card w3-round-xxlarge">
     <h3>Disclaimer!</h3>
-    <p> SendMe is a revolutionary source of income and way to connect those who
-        want work and those who want theirv tasks Done
+    <p><b> SendMe is a revolutionary source of income and way to connect those who
+        want work and those who want their tasks Done
         by professionals.Currently we are in developement mode and this version
          is out only for beta test. We'll be glad to
-        get your views and feedback..</p>
+        get your views and feedback..</b></p>
   </div>
 
   <h3 class="w3-center"><b>How it works</b></h3>
@@ -64,30 +64,38 @@
   <section>
      <!-- Menu Container -->
      <div class="w3-container" id="menu">
-       <div class="w3-content" style="max-width:700px">
-
-         <h2 class="w3-center">Our MENU</h2>
+       <div class="w3-content" style="max-width:800px">
 
          <div class="w3-row w3-center w3-card w3-padding">
            <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
-             <div class="w3-col s6 tablink">Bites</div>
+             <div class="w3-col s6 tablink">Worker</div>
            </a>
            <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-             <div class="w3-col s6 tablink">Drinks</div>
+             <div class="w3-col s6 tablink">Employer</div>
            </a>
          </div>
 
-         <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+         <div id="Eat" class="w3-container menu w3-paddng-48 w3-card">
 
-           <h5><b>thththt</b></h5>
-           <p class="w3-text-grey"><i>Carefully made samosas that leaves you satisfied</i> <span><b>Ksh.{{bite.price}}</b></span></p><br>
 
+           <p class=""><b>1.</b><i> Register on our system <a href="#" class="w3-text-light-green"> here </a> </i></p>
+            <p class=""><b>2.</b><i> Once registered, you will be prompted to update your information.Please be frank and upload
+            authentic documents (Id, Certifiacte of good conduct and Certifiactes prooving your skills ) </i></p>
+
+            <p class=""><b>3.</b><i> Wait for verification which will be done by our stuff.This will be withing 6 business days.
+              feedback will be sent to your email and back office</i></p>
+
+             <p class=""><b>4.</b><i> Once <span class="w3-text-light-green">verified</span>, You can start biding for jobs immediatley</i></p>
+
+              <p class=""><b><i> Incase of any difficulties, don't hesitate to contact us <a class="w3-text-light-green" href="#">Here</a> </i></b></p>
          </div>
 
-         <div id="Drinks" class="w3-container menu w3-padding-28 w3-card">
-           <h5></h5>
-           <p class="w3-text-grey"><b>1</b>. <i>naturally made.........................@ </i><span><b>Ksh.</b></span> </p><br>
-
+         <div id="Drinks" class="w3-container menu w3-padding-18 w3-card">
+           <i>Nothing much for you</i>
+           <p class=""><b>1.</b><i> Register on our system  <a class="w3-text-light-green" href="#">Here</a> </i></p>
+           <p class=""><b>2.</b><i> Once registered you'll be prompeted to update your prifie(contact)</i></p>
+           <p class=""><b>3.</b><i> You are can post your task immediatley after succesfull registration</i></p>
+           <p class=""><b><i> Incase of any difficulties, don't hesitate to contact us <a class="w3-text-light-green" href="#">Here</a> </i></b></p>
          </div>
        </div>
      </div>
@@ -113,11 +121,11 @@
            please! I'll, pay handsomeley </p>
       </div>
 
-      <button style="font-size:10px" class="w3-btn-block w3-hide-small w3-pale-yellow">
+      <button style="font-size:10px" class="w3-btn-block w3-hide-small w3-pale-blue">
         Time left: <span class="w3-text-red "><b>6days 8hrs 56mins</b></span> </button>
-        <button style="font-size:10px" class="w3-btn-block w3-pale-yellow w3-hide-large w3-hide-medium">Available</button>
-      <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bids:7/16</button>
-      <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bid now</button>
+        <button style="font-size:10px" class="w3-btn-block w3-pale-blue w3-hide-large w3-hide-medium">Available</button>
+      <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bids:7/16</button>
+      <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bid now</button>
       </div>
     </div>
 
@@ -133,10 +141,10 @@
          please! I'll, pay handsomeley </p>
     </div>
 
-    <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">
+    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">
       Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bids:7/16</button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bid now</button>
+    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bids:7/16</button>
+    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bid now</button>
     </div>
   </div>
 
@@ -152,9 +160,9 @@
          please! I'll, pay handsomeley </p>
     </div>
 
-    <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">
+    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">
       Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bids:7/16</button>
+    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bids:7/16</button>
     <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bid now</button>
     </div>
   </div>
@@ -226,7 +234,7 @@
 <br >
 </div>
 <!-- footer begins here -->
-<footer class="w3-container w3-pale-yellow w3-card-4 w3-center w3-teal">
+<footer class="w3-container w3-pale-blue w3-card-4 w3-center w3-teal">
   <h5><img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></h5>
   <p>Powered by SendMe group of developers</p>
   <i> &copy sendMe|2018-2019</i>
@@ -267,10 +275,10 @@ function carousel() {
           }
           tablinks = document.getElementsByClassName("tablink");
           for (i = 0; i < x.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+            tablinks[i].className = tablinks[i].className.replace(" w3-pale-blue", "");
           }
           document.getElementById(menuName).style.display = "block";
-          evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+          evt.currentTarget.firstElementChild.className += " w3-pale-blue";
         }
         document.getElementById("myLink").click();
         </script>
