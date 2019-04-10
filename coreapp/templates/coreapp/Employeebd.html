@@ -1,0 +1,177 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<title>My Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large w3-pale-blue w3-card-2 w3-left-align" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-left"><img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="{% static 'images/logo35.png'%}" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>{{request.user.username}}</strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  My Tasks</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Upgrade</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Withdraw</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Deposit</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>Edit profile</a>
+
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;padding-top:22px">
+
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h2>Ksh.520</h2>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Available Earnings</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-money w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h2>Ksh.45000</h2>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Total Withdrawn</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-lime w3-padding-16">
+        <div class="w3-left"><i class="fa fa-briefcase w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h2>65</h2>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Jobs Completed</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-cyan w3-padding-16">
+        <div class="w3-left"><i class="fa fa-briefcase w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h2>15</h2>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Jobs Posted</h4>
+      </div>
+    </div>
+  </div>
+<br>
+<!-- tabs for jobs -->
+<div class="w3-bar w3-pale-blue">
+  <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'London')">London</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Paris</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="w3-container w3-border city">
+  <h2>London</h2>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="w3-container w3-border city" style="display:none">
+  <h2>Paris</h2>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="w3-container w3-border city" style="display:none">
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+</div>
+
+
+  <!-- footer begins here -->
+  <footer class="w3-container w3-pale-blue w3-card-4 w3-center w3-teal">
+    <h5><img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></h5>
+    <p>Powered by SendMe group of developers</p>
+    <i> &copy sendMe|2018-2019</i>
+
+  </footer>
+
+  <!-- End page content -->
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-teal", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-teal";
+}
+</script>
+
+</body>
+</html>
