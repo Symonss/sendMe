@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 def home(request):
-    jobs = Jobs.objects.filter(deadline__lte=timezone.now()).order_by('deadline')
+    jobs = Jobs.objects.all()
     return render(request, 'coreapp/home.html', {'jobs':jobs})
 
 def login(request):
