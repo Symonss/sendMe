@@ -97,12 +97,108 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-<br>
+
 <!-- tabs for jobs -->
+<h3 class="w3-center"><b>My Tasks</b></h3>
+<hr class="w3-border-red " style="margin:auto;width:40%">
+<br>
 <div class="w3-bar w3-pale-blue">
-  <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'London')">London</button>
-  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Paris</button>
-  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Tokyo</button>
+  <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'London')">All Jobs</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Completed</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Pending</button>
+</div>
+
+<div id="London" class="w3-container w3-border city">
+  <table class="w3-table-all ">
+   <tr>
+     <th>Id No.</th>
+     <th>Title</th>
+     <th>Status</th>
+     <th>Date</th>
+     <th>Done By</th>
+   </tr>
+   <tr>
+     <td>5643</td>
+     <td>Do PHT Exam for me</td>
+     <td>Approved</td>
+     <td>12/09/2019</td>
+     <td>John</td>
+   </tr>
+   <tr>
+     <td>66594</td>
+     <td>Water Fetching</td>
+     <td>Approved</td>
+     <td>12/09/2019</td>
+     <td>Machokez</td>
+   </tr>
+   <tr>
+     <td>11243</td>
+     <td>Tv Wall Mounting</td>
+     <td>Approved</td>
+     <td>12/09/2019</td>
+     <td>Symons</td>
+   </tr>
+ </table>
+</div>
+
+<div id="Paris" class="w3-container w3-border city" style="display:none">
+  <table class="w3-table-all ">
+   <tr>
+     <th>Id No.</th>
+     <th>Title</th>
+     <th>Status</th>
+   </tr>
+   <tr>
+     <td>5643</td>
+     <td>Do PHT Exam for me</td>
+     <td>Approved</td>
+   </tr>
+   <tr>
+     <td>Eve</td>
+     <td>Jackson</td>
+     <td>94</td>
+   </tr>
+   <tr>
+     <td>Adam</td>
+     <td>Johnson</td>
+     <td>67</td>
+   </tr>
+ </table>
+</div>
+
+<div id="Tokyo" class="w3-container w3-border city" style="display:none">
+  <table class="w3-table-all ">
+   <tr>
+     <th>Id No.</th>
+     <th>Title</th>
+     <th>Status</th>
+   </tr>
+   <tr>
+     <td>5643</td>
+     <td>Do PHT Exam for me</td>
+     <td>Approved</td>
+   </tr>
+   <tr>
+     <td>Eve</td>
+     <td>Jackson</td>
+     <td>94</td>
+   </tr>
+   <tr>
+     <td>Adam</td>
+     <td>Johnson</td>
+     <td>67</td>
+   </tr>
+ </table>
+</div>
+
+<!-- tabs for jobs -->
+<h3 class="w3-center"><b>Tasks Taken</b></h3>
+<hr class="w3-border-red " style="margin:auto;width:40%">
+<br>
+<div class="w3-bar w3-pale-blue">
+  <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'London')">All Jobs</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Completed</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Pending</button>
 </div>
 
 <div id="London" class="w3-container w3-border city">
@@ -179,7 +275,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
    </tr>
  </table>
 </div>
+
+
 </div>
+
+
 
 
   <!-- footer begins here -->
