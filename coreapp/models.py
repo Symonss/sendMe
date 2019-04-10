@@ -43,12 +43,17 @@ class Admin(models.Model):
 class Jobs(models.Model):
     title = models.CharField(max_length=50, default='TV Mounting')
     job_description =models.TextField(default=
-    'This job should be done as first as posible, can\'t wait for the bids')
+    'This job should be done as first as posible, can\'t wait for the bids',max_length=300)
     lower_range = models.IntegerField(default=500)
     upper_range = models.IntegerField(default=15000)
     owner = models.CharField(max_length=50, default='Peterson')
     location =models.CharField(max_length=50, default='Kisumu')
+    published_date= models.DateTimeField(blank=True, null=True)
     deadline = models.DateTimeField()
 
     def __str__(self):
         return self.title
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
