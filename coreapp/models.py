@@ -47,5 +47,8 @@ class Jobs(models.Model):
     lower_range = models.IntegerField(default=500)
     upper_range = models.IntegerField(default=15000)
     owner = models.CharField(max_length=50, default='Peterson')
-    location =models.CharField(max_length=50, default='Peterson')
+    location =models.CharField(max_length=50, default='Kisumu')
     deadline = models.DateTimeField()
+
+    def __str__(self):
+        return self.title
