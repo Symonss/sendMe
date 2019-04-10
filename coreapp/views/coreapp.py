@@ -1,10 +1,9 @@
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
-
-class SignUpView(TemplateView):
-    template_name = 'registration/signup.html'
+from coreapp.models import Jobs
+from django.utils import timezone
 
 
 def home(request):
-
-    return render(request, 'coreapp/home.html')
+    jobs = Jobs.objects.filter(deadline__lte=timezone.now()).order_by('deadline')
+    return render(request, 'coreapp/home.html', {'jobs':jobs})

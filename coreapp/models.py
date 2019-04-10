@@ -39,3 +39,13 @@ class Admin(models.Model):
     last_name= models.CharField(max_length=50, default='Peterson')
     phone = models.IntegerField(default='0792799958')
     email= models.CharField(max_length=50, default='yourmail@gmail.com')
+
+class Jobs(models.Model):
+    title = models.CharField(max_length=50, default='TV Mounting')
+    job_description =models.TextField(default=
+    'This job should be done as first as posible, can\'t wait for the bids')
+    lower_range = models.IntegerField(default=500)
+    upper_range = models.IntegerField(default=15000)
+    owner = models.CharField(max_length=50, default='Peterson')
+    location =models.CharField(max_length=50, default='Peterson')
+    deadline = models.DateTimeField()

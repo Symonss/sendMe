@@ -110,68 +110,28 @@ p{
   <h3 class="w3-center"><b>Available jobs</b></h3>
   <hr class="w3-border-red" style="margin:auto;width:40%">
 
-  <div class="w3-row-padding w3-margin-top">
-  </div>
-  <div class="w3-row-padding w3-margin-top">
+  <div class=" w3-margin-top w3-row-padding">
+  {% for job in jobs%}
+    <div class="w3-col s4 " style="height:200px">
 
-    <div class="w3-third" style="margin-top:10px">
-      <div class="w3-card-2">
+      <div class="w3-card-2" >
       <div class="w3-container">
-        <h5 style="margin-bottom:-2%"><b>Honey Sacking</b></h5>
-        <p  style="font-size:10px;margin-bottom:-5%" class="w3-btn-block"><i><b class="w3-text-teal">Range:Ksh.5600-Ksh.7000 |
-        By:Symons | Kisumu</b></i></p>
+        <h5 style="margin-bottom:-2%"><b>{{job.title}}</b></h5>
+        <p  style="font-size:10px;margin-bottom:-5%" class="w3-btn-block"><i><b class="w3-text-teal">Range:Ksh.{{job.lower_range}}-Ksh.{{job.upper_range}} |
+        By:{{job.owner}} | {{job.location}}</b></i></p>
         <hr>
         <img src="{% static 'images/logo.jpg'%}" alt="Avatar" class="w3-left w3-circle">
-        <p class="w3-large">My fucking toilet sucks. someone cum suck it
-           please! I'll, pay handsomeley </p>
+        <p class="w3-large">{{job.job_description}} </p>
       </div>
-
       <button style="font-size:10px" class="w3-btn-block w3-hide-small w3-pale-blue">
         Time left: <span class="w3-text-red "><b>6days 8hrs 56mins</b></span> </button>
         <button style="font-size:10px" class="w3-btn-block w3-pale-blue w3-hide-large w3-hide-medium">Available</button>
       <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bids:7/16</button>
       <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bid now</button>
       </div>
+          </div>
+          {% endfor %}
     </div>
-
-  <div class="w3-third" style="margin-top:10px">
-    <div class="w3-card-2">
-    <div class="w3-container">
-      <h5 style="margin-bottom:-2%"><b>Honey Sacking</b></h5>
-      <p  style="font-size:10px;margin-bottom:-5%" class="w3-btn-block w3-text-teal"><i><b>Range:Ksh.56.00-Ksh.70.00 |
-      By:Symons | Kisumu</b></i></p>
-      <hr>
-      <img src="{% static 'images/logo.jpg'%}" alt="Avatar" class="w3-left w3-circle">
-      <p class="w3-large">My fucking toilet sucks. someone cum suck it
-         please! I'll, pay handsomeley </p>
-    </div>
-
-    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">
-      Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bids:7/16</button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bid now</button>
-    </div>
-  </div>
-
-  <div class="w3-third" style="margin-top:10px">
-    <div class="w3-card-2">
-    <div class="w3-container">
-      <h5 style="margin-bottom:-2%"><b>Honey Sacking</b></h5>
-      <p  style="font-size:10px;margin-bottom:-5%" class="w3-btn-block w3-text-teal"><i><b>Range:Ksh.56.00-Ksh.70.00 |
-      By:Symons | Kisumu</b></i></p>
-      <hr>
-      <img src="{% static 'images/logo.jpg'%}" alt="Avatar" class="w3-left w3-circle">
-      <p class="w3-large">My fucking toilet sucks. someone cum suck it
-         please! I'll, pay handsomeley </p>
-    </div>
-
-    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">
-      Time left: <span class="w3-text-red"><b>6days 8hrs 56mins</b></span> </button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-blue">Bids:7/16</button>
-    <button style="font-size:10px" class="w3-btn-block w3-pale-yellow">Bid now</button>
-    </div>
-  </div>
-  </div>
 
 
   <h3 class="w3-center"><b>Our Developers</b></h3>
@@ -238,6 +198,9 @@ p{
 </div>
 <br >
 </div>
+
+
+
 <!-- footer begins here -->
 <footer class="w3-container w3-pale-blue w3-card-4 w3-center w3-teal">
   <h5><img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></h5>
