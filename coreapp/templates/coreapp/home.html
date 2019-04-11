@@ -7,6 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3school.com/w3css/4/w3.css">
 <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
 <style>
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
@@ -17,55 +23,67 @@ p{
 </style>
 <body class="w3-text-grey w3-large">
 
-  <div class="w3-bar w3-top w3-large w3-pale-blue w3-card-2 w3-left-align">
-    <a class="w3-hide-medium w3-hide-large w3-bar-item w3-button
-    w3-opennav w3-right" href="javascript:void(0);" onclick="myFunction()">☰</a>
-    <a class="w3-bar-item w3-buttn  " href="#">
-      <img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></a>
-    <a class="w3-bar-item w3-button  w3-hide-small w3-right" href="#">Login|Signup</a>
-    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">How to</a>
-    <a class="w3-hide-small w3-bar-item w3-button w3-right" href="#">Jobs</a>
-    <a onclick="document.getElementById('id01').style.display='block'" class="w3-hide-small w3-bar-item w3-text-blue w3-button w3-right">Proceed To Alpha Test</a>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-teal">
-        <span onclick="document.getElementById('id01').style.display='none'"
-        class="w3-button w3-display-topright">&times;</span>
-        <h2>Note!! This is Alpha test.</h2>
-      </header>
-      <div class="w3-container">
-        <p>You are about to login to admin panel.Be disciplined or  get burned from using SendMe <br>
-        use the following details to login when asked:</p>
-        <p><b>Username: tester1</b></p>
-        <p><b>Password: alpha001</b></p>
-          <p>After succesfull login, add job then click view site at the topright corner </p>
+<!--  begin here-->
 
-        <a class="w3-hide-small w3-bar-item w3-teal w3-button w3-center" href="https://sendme.pythonanywhere.com/admin">Continue</a>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-pale-blue w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"><img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">LOGIN|SIGNUP</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">HOW TO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">EARN</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-small">ADD TASK</a>
+    <div class="w3-dropdown-hover w3-right w3-hide-small">
+      <button class="w3-padding-large  w3-button" title="More">{{request.user.username }} <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="{% url 'edb'%}" class="w3-bar-item w3-button">Darshbord</a>
+        <a href="#" class="w3-bar-item w3-button">Edit profile</a>
+        <a href="#" class="w3-bar-item w3-button">Upgrade</a>
       </div>
-
     </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-left w3-hide-small "><i class="fa fa-search"></i></a>
   </div>
-
-
 </div>
-  </div>
 
-  <div id="demo" class="w3-hide w3-hide-large  w3-hide-medium">
-    <div class="w3-bar-block  w3-left-align w3-large w3-pale-blue">
-      <a class="w3-bar-item w3-buttn  " href="#">
-        <img src="{% static 'images/logo35.png'%}" style="width:129px;height:35px"alt="logo"></a>
-      <a class=" w3-bar-item w3-button"href="#">Jobs</a>
-      <a class=" w3-bar-item w3-button"href="#">How to</a>
-      <a class=" w3-bar-item w3-button"href="#">Login|Signup</a>
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-pale-blue w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOGIN|SIGNUP</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOW TO</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">EARN</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ADD TASK</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img class="w3-opacity" src="{% static 'images/vacation.jpg'%}" style="width:100%">
+    <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <p style="color:blue;Font-size:46px">No Vacation Time?</p>
+      <p style="Font-size:36px"><b><i>Don't Worry About Your Tasks, Enjoy As Your Tasks Are Done! </i><span style="color:black;font-weight:150px">send </span><span style="color:blue;font-weight:150px">Me</span> </b></p>
     </div>
   </div>
-<br><br>
-  <div class="w3-content w3-section w3-card-2" style="max-width:90%">
-    <img class="mySlides" src="{% static 'images/money.jpg'%}" style="width:100%;height:500px">
-    <img class="mySlides" src="{% static 'images/cubemover.jpg'%}" style="width:100%;height:500px">
-    <img class="mySlides" src="{% static 'images/tvmounting.jpg'%}" style="width:100%;height:500px">
+  <div class="mySlides w3-display-container w3-center">
+    <img class="w3-opacity" src="{% static 'images/freedom.jpg'%}" style="width:100%">
+    <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <p style="color:blue;Font-size:46px">Need Freedom?</p>
+      <p style="Font-size:36px;color:black"><b><i>Work When You Feel Like $ Do What You Like Doing With </i><span style="color:white;font-weight:150px">send </span><span style="color:blue;font-weight:150px">Me</span> </b></p>
+    </div>
   </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img class="w3-opacity" src="{% static 'images/jobless.jpg'%}" style="width:100%">
+    <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <p style="color:blue;Font-size:46px">No Job??</p>
+      <p style="Font-size:36px"><b><i>Never Worry About Having A job Again! You have </i><span style="color:black;font-weight:150px">send </span><span style="color:blue;font-weight:150px">Me</span> </b></p>
+    </div>
+  </div>
+
+<!--  end here-->
+
+
 <div class="" style="padding-left:13%;padding-right:15%">
 
   <div class="w3-panel w3-text-light-green w3-card w3-round-xxlarge">
@@ -234,13 +252,14 @@ p{
 </footer>
 
 
-<script>
+<!-- <script>
 function myFunction() {
     document.getElementById("demo").classList.toggle("w3-show");
 }
-</script>
+</script> -->
 
 <script>
+// Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
 
@@ -253,7 +272,17 @@ function carousel() {
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}
   x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 4000); // Change image every 2 seconds
+  setTimeout(carousel, 4000);
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
 }
 </script>
 
