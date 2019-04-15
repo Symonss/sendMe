@@ -15,3 +15,6 @@ def login(request):
 def edb(request):
 
     return render(request, 'coreapp/Employeebd.html')
+
+class SignUpView(TemplateView):
+    template_name = 'registration/signup.html'
