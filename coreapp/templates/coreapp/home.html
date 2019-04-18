@@ -58,7 +58,7 @@ p{
   <a href="{% url 'logout'%}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOGOUT</a>
 
   {% else %}
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOGIN|SIGNUP</a>
+  <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOGIN|SIGNUP</a>
   {% endif %}
   <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOW TO</a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">EARN</a>
