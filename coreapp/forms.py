@@ -18,7 +18,7 @@ class EmployerSignUpForm(UserCreationForm):
         user = super().save(commit=False)
         user.is_employer = True
         user.save()
-        employer = Employer.objects.create(user=user)
+        # employer = Employer.objects.create(user=user)
         return user
 
 

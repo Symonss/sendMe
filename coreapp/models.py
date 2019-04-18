@@ -16,23 +16,21 @@ class User(AbstractUser):
     location = models.CharField(max_length=25, default='Kisumu')
     gender = models.CharField(max_length=150, default= 'Female')
 
-    def __str__(self):
-        return self.first_name
 
 class Employer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     number = models.IntegerField(null=True,blank=True)
     def __str__(self):
-        return self.number
+        return str(self.number)
 
-# @receiver(post_save, sender=User)
-# def create_user_profile(sender, instance, created, **kwargs):
-#     if created:
-#         Employer.objects.create(user=instance)
-#
-# @receiver(post_save, sender=User)
-# def save_user_profile(sender, instance, **kwargs):
-#     instance.employer.save()
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Employer.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.employer.save()
 
 
 
@@ -60,26 +58,12 @@ class Jobs(models.Model):
     Employer= models.ForeignKey(Employer, on_delete=models.CASCADE, related_name='my_salons')
     worker = models.ForeignKey(User, on_delete=models.CASCADE, related_name='my_salons' ,blank=True, null=True)
     location =models.CharField(max_length=50, default='Kisumu')
-    published_date= models.DateTimeField(blank=True, null=True)
-    deadline = models.DateTimeField()
+    published_date= models.DateTimeField(timezone.now())
+    deadline = models.DateTimeField(default='2019-04-18 23:00:00')
 
     def __str__(self):
-        return self.title
+        return self.job_description
 
     def publish(self):
         self.published_date = timezone.now()
         self.save()
-
-
-class Worker(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    image=models.CharField(max_length=30)
-    id=models.CharField(max_length=30)
-    good_certificate=models.CharField(max_length=30)
-    proof =models.CharField(max_length=30)
-    supporting_document = models.CharField(max_length=30)
-    descriptio= models.TextField()
-
-
-    def __str__(self):
-        return self.descrition
