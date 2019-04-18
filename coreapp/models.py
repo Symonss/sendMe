@@ -58,7 +58,7 @@ class Jobs(models.Model):
     Employer= models.ForeignKey(Employer, on_delete=models.CASCADE, related_name='my_salons')
     worker = models.ForeignKey(User, on_delete=models.CASCADE, related_name='my_salons' ,blank=True, null=True)
     location =models.CharField(max_length=50, default='Kisumu')
-    published_date= models.DateTimeField(timezone.now())
+    published_date= models.DateTimeField(default=timezone.now())
     deadline = models.DateTimeField(default='2019-04-18 23:00:00')
 
     def __str__(self):
